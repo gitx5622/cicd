@@ -8,9 +8,13 @@ services:
       - ./:/app:delegated
     ports:
       - '8080:80'
+    links:
+      - db
 
   db:
     image: mysql:latest
+    ports:
+    - "3307:3306"
     volumes:
       - ./mysql:/etc/mysql/conf.d
     environment:
@@ -21,7 +25,6 @@ services:
     image: phpmyadmin/phpmyadmin
     restart: always
     environment:
-      PMA_PORT: 3306
       PMA_HOST: db
       PMA_USER: bazengadaddy
       PMA_PASSWORD: Password123#@!
