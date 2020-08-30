@@ -6,6 +6,7 @@ return [
     'username' => 'bazengadaddy',
     'password' => 'Password123#@!',
     'charset' => 'utf8',
+    'emulatePrepare'=>true,
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
