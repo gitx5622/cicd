@@ -24,7 +24,7 @@ services:
     restart: always
     environment:
       PMA_PORT: 3306
-      PMA_HOST: db
+      PMA_HOST: 172.17.0.2
       PMA_USER: bazengadaddy
       PMA_PASSWORD: Password123#@!
       UPLOAD_LIMIT: 3000000000
