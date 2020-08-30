@@ -11,8 +11,6 @@ services:
 
   db:
     image: mysql:latest
-    ports:
-    - "3307:3306"
     volumes:
       - ./mysql:/etc/mysql/conf.d
     environment:
