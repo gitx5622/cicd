@@ -15,8 +15,6 @@ services:
     - "3307:3306"
     volumes:
       - ./mysql:/etc/mysql/conf.d
-    networks:
-      - web
     environment:
         MYSQL_ROOT_PASSWORD: Password123#@!
         MYSQL_DATABASE: cicd
@@ -34,5 +32,3 @@ services:
       - "8000:80"
     depends_on:
       - db
-    networks:
-      - web
