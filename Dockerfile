@@ -6,7 +6,8 @@ WORKDIR /app
 
 ADD composer.lock composer.json /app/
 RUN composer install --prefer-dist --optimize-autoloader --no-dev && \
-    composer clear-cache
+#    composer clear-cache && \
+    composer update
 
 ADD yii /app/
 ADD ./web /app/web/
@@ -15,3 +16,5 @@ ADD ./config /app/config
 RUN mkdir -p runtime web/assets && \
     chmod -R 777 runtime web/assets && \
     chown -R www-data:www-data runtime web/assets
+
+EXPOSE 8080

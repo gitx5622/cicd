@@ -1,15 +1,15 @@
 version: '3'
 services:
   web:
-    build: ./
-    container_name: cicd_web
+    image: yiisoftware/yii2-php:7.2-apache
+    container_name: ci_web
     volumes:
       - .:/var/www/html
     ports:
       - '8080:80'
   db:
     image: mysql:latest
-    container_name: cicd_db
+    container_name: ci_db
     environment:
         MYSQL_ROOT_PASSWORD: Password123#@!
         MYSQL_DATABASE: cicd
@@ -19,7 +19,6 @@ services:
     restart: always
     environment:
       PMA_PORT: 3306
-      PMA_HOST: db
       PMA_USER: bazengadaddy
       PMA_PASSWORD: Password123#@!
       UPLOAD_LIMIT: 3000000000
