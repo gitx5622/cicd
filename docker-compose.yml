@@ -2,14 +2,14 @@ version: '3'
 services:
   web:
     image: yiisoftware/yii2-php:7.2-apache
-    container_name: ci_web
+    container_name: cicd_web
     volumes:
       - .:/var/www/html
     ports:
       - '8080:80'
   db:
     image: mysql:latest
-    container_name: ci_db
+    container_name: cicd_db
     environment:
         MYSQL_ROOT_PASSWORD: Password123#@!
         MYSQL_DATABASE: cicd
