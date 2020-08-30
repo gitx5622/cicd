@@ -34,7 +34,8 @@ pipeline {
                     steps{
                        sh "composer install --prefer-dist --optimize-autoloader --no-dev"
                        sh "composer update"
-                       sh "chmod -R 777 runtime web/assets"
+                       sh "docker-php-ext-install -j$(nproc) mysql pdo_mysql"
+//                        sh "chmod -R 777 runtime web/assets"
                     }
                 }
 
