@@ -8,7 +8,7 @@ services:
     ports:
       - '8080:80'
   db:
-    image: mysql:latest
+    image: mysql
     container_name: cicd_db
     environment:
         MYSQL_ROOT_PASSWORD: Password123#@!
@@ -23,6 +23,6 @@ services:
       PMA_PASSWORD: Password123#@!
       UPLOAD_LIMIT: 3000000000
     ports:
-      - "8000:80"
+      - "8006:80"
     depends_on:
       - db
